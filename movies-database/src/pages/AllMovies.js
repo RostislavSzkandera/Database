@@ -30,7 +30,7 @@ const AllMovies = () => {
 
   return (
     <section className="w-9/12 flex flex-col mt-8">
-      {error ? <p className="text-2xl">{error}</p>: <h2 className="text-2xl mb-8 text-center ">Seznam filmů</h2>}
+      {error ? <p className="text-2xl text-center">{error}</p>: <h2 className="text-2xl mb-8 text-center ">Seznam filmů</h2>}
       {
         data.map( (oneMovie) => {
           const { id, title } = oneMovie

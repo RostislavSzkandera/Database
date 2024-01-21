@@ -7,7 +7,8 @@ module.exports = {
       gray: "#0f5668",
       white: "#e5e5e5",
       button: "#dc2626",
-      hover: "#b91c1c"
+      hover: "#b91c1c",
+      link: "#60a5fa"
     },
     extend: {
       
