@@ -25,7 +25,7 @@ const OneMovie = () => {
     <div className="flex flex-col justify-center items-center mt-8 ">
             {error && <p>{error}</p>}
             <h2 className="text-2xl mb-8">{data.title}</h2>
-            <p className="mb-4">Hlavní herec/herci: {data.mainActor}</p>
+            <p className="mb-4">Hlavní role: {data.mainActor}</p>
             <p className="mb-4">Minimální věk: {data.minAge}+</p>
             <p className="mb-4">Délka filmu: {data.time} minut</p>
             <p className="mb-8">Žánr: {data.genre}</p>

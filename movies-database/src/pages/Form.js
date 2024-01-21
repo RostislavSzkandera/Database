@@ -61,7 +61,7 @@ const Form = () => {
                 />
                 <input 
                     type="text" 
-                    placeholder="Hlavní herec/herci"
+                    placeholder="Hlavní role"
                     onChange={ (e) => setMainActor(e.target.value)}
                     value={mainActor}
                     className="bg-primary p-2 outline-none mb-2 placeholder:text-white "

@@ -35,7 +35,7 @@ const AllMovies = () => {
         data.map( (oneMovie) => {
           const { id, title } = oneMovie
           return <div className="bg-primary flex flex-row justify-between items-center  mb-2 p-4 border border-primary" key={id}>
-              <h2 className="w-1/3 sm:w-1/2 border border-primary">{title}</h2>
+              <h2 className="w-1/3 sm:w-1/2 text-xl">{title}</h2>
               <div className="flex flex-col sm:flex-row justify-center items-center">
                             <Link to={`/one-movie/${id}`}>Více informací</Link>
                             <button className="bg-button rounded ml-4 p-1 hover:bg-hover" onClick={ () => deleteMovie(id)}>Smazat</button>

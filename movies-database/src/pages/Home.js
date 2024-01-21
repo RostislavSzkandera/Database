@@ -6,8 +6,8 @@ const Home = () => {
             
     <h2 className="text-2xl mb-8">Databáze filmů</h2>
     <p>Toto je seznam mých oblíbených filmů. Každý tady může přidat film a
-       napsat o něm pár informací.
-        Také je může kdokoliv smazat. Prohlédnout si bližší informace o filmech.
+       napsat o něm pár informací,
+        také je může kdokoliv smazat. Prohlédnout si bližší informace o filmech.
         Seznam se ukládá do databáze Firebase
     
 
