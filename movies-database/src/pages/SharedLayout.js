@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 
 const SharedLayout = () => {
   return (
-    <div className="bg-gray text-white">
+    <div className="bg-gray text-white font-Ubuntu">
         <div className="container mx-auto min-h-screen flex flex-col items-center">
         <NavBar />
         <Outlet />

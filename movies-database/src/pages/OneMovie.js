@@ -9,6 +9,8 @@ const OneMovie = () => {
 
   const {movieId} = useParams()
   
+  // Načtení dat z databáze
+
   useEffect( () => {
     projectFirestore.collection("moviesapp").doc(movieId).get().then( (document) => {
         if (document.exists) {
@@ -21,6 +23,7 @@ const OneMovie = () => {
     })
 }, [movieId])
 
+// Vypsání dat do stránky
   return (
     <div className="flex flex-col justify-center items-center mt-8 ">
             {error && <p>{error}</p>}
@@ -29,7 +32,7 @@ const OneMovie = () => {
             <p className="mb-4">Minimální věk: {data.minAge}+</p>
             <p className="mb-4">Délka filmu: {data.time} minut</p>
             <p className="mb-8">Žánr: {data.genre}</p>
-            <Link className="text-link border-b border-link" to="/all-movies">Zpět na seznam filmů</Link>
+            <Link className="text-blue border-b border-blue" to="/all-movies">Zpět na seznam filmů</Link>
     </div>
   )
 }

@@ -16,6 +16,7 @@ const Form = () => {
         inputRef.current.focus()
        
         
+        // Vytvoření nového filmu
         const newMovie = { 
             title: title, 
             mainActor: mainActor, 
@@ -24,6 +25,7 @@ const Form = () => {
             genre: genre
         }
     
+        // Přidání nového filmu do databáze
         try {
             await projectFirestore.collection("moviesapp").add(newMovie)
             setTitle("")
@@ -38,14 +40,13 @@ const Form = () => {
             console.log(err.message);
            }
         
-           
        }
 
-       
+    //    Formulář pro přidání filmu
        
        return(
         <section className="mt-8 w-1/2">
-                <h1 className="text-2xl text-center mb-8">Přidání filmu</h1>
+            <h1 className="text-2xl text-center mb-8">Přidání filmu</h1>
             <form className="w-full flex flex-col" onSubmit={formSubmit}>
                 <input 
                     type="text" 
@@ -53,7 +54,7 @@ const Form = () => {
                     onChange={ (e) => setTitle(e.target.value)}
                     required={true}
                     value={title}
-                    className="bg-primary p-2 outline-none mb-2 placeholder:text-white "
+                    className="bg-black outline-none mb-2 p-2 placeholder:text-white"
                     ref={inputRef}
                    
                     
@@ -64,7 +65,7 @@ const Form = () => {
                     placeholder="Hlavní role"
                     onChange={ (e) => setMainActor(e.target.value)}
                     value={mainActor}
-                    className="bg-primary p-2 outline-none mb-2 placeholder:text-white "
+                    className="bg-black outline-none mb-2 p-2 placeholder:text-white"
                 />
                 <input 
                     type="number" 
@@ -74,7 +75,7 @@ const Form = () => {
                     value={time}
                     min="1"
                     max="300"
-                    className="bg-primary p-2 outline-none mb-2 placeholder:text-white "
+                    className="bg-black outline-none mb-2 p-2 placeholder:text-white"
                 />
                 <input 
                     type="number" 
@@ -84,9 +85,9 @@ const Form = () => {
                     value={minAge}
                     min="1"
                     max="18"
-                    className="bg-primary p-2 outline-none mb-2 placeholder:text-white "
+                    className="bg-black outline-none mb-2 p-2 placeholder:text-white"
                 />
-                <select className="bg-primary p-2 outline-none mb-2 "required={true} name="status" value={genre} onChange={(e) => setGenre(e.target.value)}>
+                <select className="bg-black outline-none mb-2 p-2"required={true} name="status" value={genre} onChange={(e) => setGenre(e.target.value)}>
                     <option value="">--Vyberte žánr--</option>
                     <option value="Komedie">Komedie</option>
                     <option value="Akční">Akční</option>
@@ -102,7 +103,7 @@ const Form = () => {
                 <input 
                     type="submit"
                     value="Přidat film" 
-                    className="bg-button rounded outline-none mx-auto text-xl p-2  hover:bg-hover cursor-pointer"
+                    className="bg-red rounded text-xl outline-none mx-auto p-2  hover:bg-redhover cursor-pointer"
                                        
                 />
             </form>

@@ -7,7 +7,7 @@ const AllMovies = () => {
     const [data, setData] = useState([])
     const [error, setError] = useState(false)
   
-  
+  // Načtení dat z databáze
     useEffect( ()=> {
       const unsubscribe = projectFirestore.collection("moviesapp").onSnapshot( (snapshot) => {
         if(snapshot.empty) {
@@ -28,19 +28,20 @@ const AllMovies = () => {
       projectFirestore.collection("moviesapp").doc(id).delete()
     }
 
+// Vypsání dat do stránky
   return (
-    <section className="w-9/12 flex flex-col mt-8">
+    <section className="flex flex-col w-4/5  mt-8 lg:w-1/2">
       {error ? <p className="text-2xl text-center">{error}</p>: <h2 className="text-2xl mb-8 text-center ">Seznam filmů</h2>}
       {
         data.map( (oneMovie) => {
           const { id, title } = oneMovie
-          return <div className="bg-primary flex flex-row justify-between items-center  mb-2 p-4 border border-primary" key={id}>
-              <h2 className="w-1/3 sm:w-1/2 text-xl">{title}</h2>
-              <div className="flex flex-col sm:flex-row justify-center items-center">
-                            <Link to={`/one-movie/${id}`}>Více informací</Link>
-                            <button className="bg-button rounded ml-4 p-1 hover:bg-hover" onClick={ () => deleteMovie(id)}>Smazat</button>
-              </div>
-          </div>
+          return <div className="bg-black flex flex-row justify-between items-center  mb-2 p-4" key={id}>
+                  <h2 className="w-1/3 md:w-1/2 md:text-xl">{title}</h2>
+                  <div className="flex flex-col md:flex-row justify-center items-center">
+                            <Link className="mb-2 bg-red h-[40px] rounded-md p-2 hover:bg-redhover md:mb-0" to={`/one-movie/${id}`}>Více informací</Link>
+                            <button className="bg-red h-[40px] rounded ml-4 p-2 hover:bg-redhover" onClick={ () => deleteMovie(id)}>Smazat</button>
+                  </div>
+                </div>
         })
       }
     </section>
