@@ -31,7 +31,7 @@ const NavBar = () => {
             {nav? <AiOutlineMenu className="" size={20} /> : <AiOutlineClose size={20} />}
         </div>
          
-        <div className={nav? "fixed left-[-100%]" : "bg-black border border-white fixed left-0 top-0 w-[60%] h-screen  uppercase ease-in-out duration-500 md:hidden"}>
+        <div className={nav? "fixed left-[-100%]" : "bg-black border border-white fixed left-0 top-0 w-[60%] h-screen  uppercase ease-in-out duration-1000 md:hidden"}>
             <div className="w-12 ml-4 mt-2">
                 <img src={logo} alt="" />
             </div>
